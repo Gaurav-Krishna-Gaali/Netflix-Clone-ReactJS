@@ -2,6 +2,9 @@
   color: white;
   object-fit: contain;
   height: 448px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .banner__contents {
@@ -23,6 +26,13 @@
   font-size: 0.8rem;
   max-width: 360px;
   height: 80px;
+  /* spacing betweeen lines  */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-top: 20px;
 }
 
 .banner__button {
@@ -49,9 +59,9 @@
 .banner--fadeBottom {
   height: 7.4rem;
   background-image: linear-gradient(
-    188deg,
+    180deg,
     transparent,
-    rgba(37, 37, 37, 0.61),
+    rgba(37, 37, 37, 0.5),
     #111
   );
 }
