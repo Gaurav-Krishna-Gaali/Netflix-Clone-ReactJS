@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "./axios";
 import "./Row.css";
+import ScrollContainer from "react-indiana-drag-scroll";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 const base_url = "https://image.tmdb.org/t/p/original/";
@@ -46,7 +47,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
   return (
     <div className="row">
       <h2>{title}</h2>
-      <div className="row__posters">
+      <ScrollContainer className="row__posters">
         {movies.map((movie) => (
           <img
             key={movie.id}
@@ -58,7 +59,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
             alt={movie.name}
           />
         ))}
-      </div>
+      </ScrollContainer>
       {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </div>
   );
